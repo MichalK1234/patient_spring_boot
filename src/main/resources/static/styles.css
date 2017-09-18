@@ -1,0 +1,18 @@
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css";
+@import "https://fonts.googleapis.com/css?family=Indie+Flower";
+@import "//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css";
+
+body {
+    margin: auto;
+    background-color: #ccccff;
+}
+
+h1 {
+    background-color: #00BFFF;
+    text-align: center;
+    padding-bottom: 35px;
+    padding-top: 35px;
+    margin-top: auto;
+    font: 60px 'Indie Flower', cursive;
+    text-decoration: underline;
+}

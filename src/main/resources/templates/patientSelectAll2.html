@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert patient</title>
+    <link rel="stylesheet" th:href="@{/generalStyles.css}">
+</head>
+<body>
+<h1>Add new patient</h1>
+<div>
+    <div class="form-horizontal" th:each="p : ${patients}">
+        <!-- <div class="form-group">
+             <label for="surname" class="col-sm-4 control-label">Id:</label>
+             <div class="col-sm-4">
+                 <p type="text" class="form-control" id="id" th:text="*{p.id}" disabled/>
+             </div>
+         </div>-->
+        <script type="text/javascript">var myVar = "${patients}";
+        function displayJSON(p) {
+            console.log(p);
+
+        }
+        document.getElementById("dupa").innerHTML = displayJSON(myVar);
+        </script>
+
+
+
+        <p id="dupa"></p>
+        <!-- <div class="form-group">
+             <label for="name" class="col-sm-4 control-label">Name:</label>
+             <div class="col-sm-4">
+                 <p type="text" class="form-control" id="name" th:text="*{p.name}" disabled/>
+             </div>
+         </div>
+         <div class="form-group">
+             <label for="surname" class="col-sm-4 control-label">Surname:</label>
+             <div class="col-sm-4">
+                 <p type="text" class="form-control" id="surname" th:text="*{p.surname}" disabled/>
+             </div>
+         </div>
+         <div class="form-group">
+             <label for="birthDate" class="col-sm-4 control-label">Birthdate:</label>
+             <div class="col-sm-4">
+                 <p type="text" class="form-control" id="birthDate"  th:text="*{p.birthDate}" disabled/>
+             </div>
+         </div>
+         <div class="form-group">
+             <label for="gender" class="col-sm-4 control-label">Gender:</label>
+             <div class="col-sm-4">
+                 <p type="text" class="form-control" id="gender"  th:text="*{p.gender}" disabled/>
+             </div>
+         </div>
+         <div class="form-group">
+             <label for="pesel" class="col-sm-4 control-label">PESEL:</label>
+             <div class="col-sm-4">
+                 <p type="text" class="form-control" id="pesel" th:text="*{p.PESEL}" disabled/>
+             </div>
+         </div>
+        &lt;!&ndash; <div class="form-group">
+             <label for="file" class="col-sm-4 control-label" required="">File input:</label>
+             <input type="file" id="file">
+         </div>&ndash;&gt;
+         <div class="span7 text-center">
+          <a class="arrow-left" role="button"/>
+             <a href="/" class="btn btn-warning" role="button">BACK</a>
+             <a class="arrow-right" role="button"/>
+         </div>
+     </div>-->
+    </div>
+</body>
+</html>

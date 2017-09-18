@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert patient</title>
+    <link rel="stylesheet" th:href="@{/generalStyles.css}">
+</head>
+<body>
+<h1>Add new patient</h1>
+<div>
+    <form th:action="@{/patient/insert}" method="post" th:object="${patient}" class="form-horizontal">
+        <div class="form-group">
+            <label for="name" class="col-sm-4 control-label">Name:</label>
+            <div class="col-sm-4">
+                <div class="form-inline">
+                    <input type="text" class="form-control" id="name" th:placeholder="Name" th:field="*{name}"
+                           style="border-radius: 25px"/>
+                    <span class="errors" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+                          style="   color: red;text-transform: uppercase;font-weight: bold;"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="surname" class="col-sm-4 control-label">Surname:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="surname" th:placeholder="Surname" th:field="*{surname}"
+                       style="border-radius: 25px"/>
+                <span class="errors" th:if="${#fields.hasErrors('name')}" th:errors="*{surname}"
+                      style="   color: red;text-transform: uppercase;font-weight: bold;"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="birthDate" class="col-sm-4 control-label">Birthdate:</label>
+            <div class="col-sm-4">
+                <input type="date" class="form-control" id="birthDate" th:placeholder="Birthdate"
+                       th:field="*{birthDate}" style="border-radius: 25px"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label" for="gender">Gender:</label>
+            <div th:each="g : ${genders}" class="form-group" style="display: inline-block">
+                <label class="col-sm-4 control-label">
+                    <label class="checkbox-inline">
+                        <label class="custom-control custom-radio">
+                            <input id="radio1" name="radio" type="radio" class="custom-control-input"/>
+                            <span class="custom-control-description" id="gender">[[${g}]]</span>
+                        </label>
+                    </label>
+                </label>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="pesel" class="col-sm-4 control-label">PESEL:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="pesel" th:field="*{PESEL}" th:placeholder="PESEL"
+                       maxlength="11" style="border-radius: 25px"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="file" class="col-sm-4 control-label" required="">File input:</label>
+            <input type="file" id="file">
+        </div>
+        <div class="span7 text-center">
+            <input type="submit" value="ADD" class="btn btn-success"/>
+            <a href="/" class="btn btn-warning" role="button">BACK</a>
+            <input type="reset" value="RESET" class="btn btn-danger"/>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

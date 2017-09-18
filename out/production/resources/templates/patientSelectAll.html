@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Patients</title>
+    <link rel="stylesheet" th:href="@{/generalStyles.css}">
+</head>
+<body>
+<h1>All patients</h1>
+<div>
+    <table>
+        <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>BirthDate</th>
+        <th>Gender</th>
+        <th>PESEL</th>
+        </thead>
+        <tbody>
+        <tr th:each="p : ${patients}">
+            <td th:text="*{p.id}"></td>
+            <td th:text="*{p.name}"></td>
+            <td th:text="*{p.surname}"></td>
+            <td th:text="*{p.birthDate}"></td>
+            <td th:text="*{p.gender}"></td>
+            <td th:text="*{p.PESEL}"></td>
+            <td><a th:href="@{/patient/update/{id}(id=*{p.id})}"><i class="icon-edit" th:title="Edit"></i></a></td>
+            <td><a th:href="@{/patient/delete/{id}(id=*{p.id})}"><i class="icon-trash" th:title="Remove"></i></a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="span7 text-center">
+    <a href="/" role="button" class="btn btn-warning">BACK</a>
+</div>
+</body>
+</html>

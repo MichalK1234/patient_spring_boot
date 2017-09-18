@@ -1,0 +1,40 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.6.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compileOnly('org.projectlombok:lombok')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'
+    compile group: 'org.hibernate', name: 'hibernate-java8', version: '5.2.11.Final'
+    compile group: 'org.thymeleaf', name: 'thymeleaf-spring4', version: '3.0.7.RELEASE'
+    compile group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '2.2.2'
+    compile group: 'org.hibernate', name: 'hibernate-validator', version: '5.4.1.Final'//if there is version above 5.4.1. error occurs
+    compile group: 'org.glassfish', name: 'javax.el', version: '3.0.1-b08'
+    compile group: 'org.thymeleaf', name: 'thymeleaf', version: '3.0.7.RELEASE' /*in spite of the fact that there is spring-boot-starter-thymeleaf
+    //views are not working properly and error occurs so this one is necesarry as well (There was an unexpected error (type=Not Found, status=404).)*/
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.1'
+}

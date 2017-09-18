@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/homeStyles.css}">
+</head>
+<body>
+<h1>Welcome to patient validation form.</h1>
+<div  class="btn-spacing">
+<a th:href="@{/patient/select/all}" class="btn btn-primary btn-lg btn-block" role="button">Click to see all our patients</a>
+</div>
+<div  class="btn-spacing">
+<a th:href="@{/patient/insert}"  class="btn btn-primary btn-lg btn-block" role="button">Click to add patient</a>
+</div>
+<div>
+    <img th:src="@{/images/patient1.jpg}" class="img-circle" alt="Patient picture nb.1">
+</div>
+</body>
+</html>
